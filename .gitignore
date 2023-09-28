@@ -1,0 +1,13 @@
+# venv
+venv
+
+# pyinstaller
+*.spec
+dist
+build
+
+# created
+*.PNG
+
+# test
+sonuc.py
