@@ -8,6 +8,7 @@ build
 
 # created
 *.PNG
+.vscode
 
 # test
 sonuc.py
