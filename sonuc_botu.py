@@ -84,19 +84,20 @@ while True:
         if "YKS" in i.text:
             sinav = "YKS"
 
-        print(f"{sinav} sonucu bulundu ve kaydediliyor!")
-        driver.execute_script(
-            "arguments[0].click();", sonuc_tdleri[2].find_element(By.TAG_NAME, "a")
-        )
-        for i in driver.window_handles:
-            driver.switch_to.window(i)
-            time.sleep(3)
-            driver.get_screenshot_as_file(
-                f"{sinav}_sonuc_{random.randint(0, 1000)}.png"
+        if sinav != "":
+            print(f"{sinav} sonucu bulundu ve kaydediliyor!")
+            driver.execute_script(
+                "arguments[0].click();", sonuc_tdleri[2].find_element(By.TAG_NAME, "a")
             )
-        print(f"{sinav} sonucu ekran görüntüsü olarak kaydedildi.")
-        sonuc_var = True
-        break
+            for i in driver.window_handles:
+                driver.switch_to.window(i)
+                time.sleep(3)
+                driver.get_screenshot_as_file(
+                    f"{sinav}_sonuc_{random.randint(0, 1000)}.png"
+                )
+            print(f"{sinav} sonucu ekran görüntüsü olarak kaydedildi.")
+            sonuc_var = True
+            break
 
     if sonuc_var:
         break
